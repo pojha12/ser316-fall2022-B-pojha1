@@ -73,11 +73,11 @@ public class BlackBoxGiven {
         game.dealDamage(ro);
         assertEquals(ro.experience, 5);
 
-//        game.dealDamage(wiz);
-//        assertEquals(wiz.health, -5);
-//
-//        game.dealDamage(wiz);
-//        assertEquals(wiz.health, 0);
+        game.dealDamage(wiz);
+        assertTrue(wiz.health < 0);
+
+        game.dealDamage(wiz);
+        assertEquals(wiz.health, 0);
 
     }
 
@@ -191,12 +191,12 @@ public class BlackBoxGiven {
         Wizard wiz = new Wizard();
         Druid dru = new Druid();
         game.attack(wiz, dru);
+        wiz.health = 16;
+        dru.health = 27;
         if (wiz.health > 0 && dru.health > 0) {
             //game.attack(wiz, dru);
             int dd = game.dealDamage(wiz);
             int td = game.takeDamage(dru, 8);
-            wiz.health = 16;
-            dru.health = 27;
             if (wiz.health > 0 && dru.health > 0) {
                 game.levelUp(wiz);
                 game.levelUp(dru);
