@@ -175,8 +175,8 @@ public class GamePlay implements GamePlayInterface {
      * Then the characters level up (call levelUp on both) -- if health > 0
      * 
      * Then the other character attacks, same procedure as above
-     * 
-     * 
+     *
+     *
      *
      * @param character that is attacking
      * @param opponent that is being attacked
