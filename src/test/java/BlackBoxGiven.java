@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class BlackBoxGiven {
+    double diff;
+    int diff1;
 
     private Class<GamePlay> classUnderTest;
 
@@ -97,37 +99,45 @@ public class BlackBoxGiven {
 
     }
 
-//    @Test
-//    public void dealDamageHealth2() {
-//        Wizard wiz = new Wizard();
-//        if (wiz.health > 0) {
-//            game.dealDamage(wiz);
-//        }
-//        assertTrue(wiz.health > 0);
-//    }
-
     @Test
-    public void takeDamageTest2() {
+    public void takeDamageTestHealth() {
         Wizard wiz = new Wizard();
-        double diff;
-        int diff1 = 0;
+    //    double diff;
+    //    int diff1 = 0;
         game.takeDamage(wiz, 10);
+        wiz.protection= 14;
         if (wiz.protection > 10) {
             diff = (wiz.protection - 10);
             if ((diff / 2) % 1 == 0.5) {
                 diff1 = (int) Math.floor(diff);
             }
-            wiz.experience = diff1;
-            wiz.health = wiz.health + (int) (diff / 2);
-            assertTrue(wiz.health < 0);
         }
+        wiz.experience = diff1;
+        wiz.health = wiz.health + (int) (diff / 2);
+        assertTrue(wiz.health > 0);
     }
-
+    @Test
+    public void takeDamageTestExp() {
+        Wizard wiz = new Wizard();
+        //    double diff;
+        //    int diff1 = 0;
+        game.takeDamage(wiz, 10);
+        wiz.protection= 14;
+        if (wiz.protection > 10) {
+            diff = (wiz.protection - 10);
+            if ((diff / 2) % 1 == 0.5) {
+                diff1 = (int) Math.floor(diff);
+            }
+        }
+        wiz.experience = diff1;
+        wiz.health = wiz.health + (int) (diff / 2);
+        assertTrue(wiz.experience < 0);
+    }
     @Test
     public void takeDamageTest3() {
         Wizard wiz = new Wizard();
-        double diff;
-        int diff1 = 0;
+   //     double diff;
+  //      int diff1 = 0;
         game.takeDamage(wiz, 10);
         wiz.protection = 14;
         if (wiz.protection > 10) {
@@ -135,32 +145,30 @@ public class BlackBoxGiven {
             if (diff % 1 == 0.5) {
                 diff1 = (int) Math.floor(diff);
             }
-            wiz.experience = diff1;
-            wiz.health = wiz.health + (int) (diff / 2.0);
-            assertEquals(diff, 0.5);
         }
+        wiz.experience = diff1;
+        wiz.health = wiz.health + (int) (diff / 2.0);
+        assertEquals(diff, 0.5);//fail
     }
 
     @Test
     public void takeDamageTestdiff() {
         Wizard wiz = new Wizard();
-        double diff;
-        int diff1 = 0;
         game.takeDamage(wiz, 10);
-        wiz.protection = 13;
-        if (wiz.protection > 10) {
+        wiz.protection = 15;
+        if (wiz.protection <= 10) {
             diff = (wiz.protection - 10) / 2;
             if (diff % 1 == 0.5) {
                 diff1 = (int) Math.floor(diff);
             }
-            wiz.experience = diff1;
-            wiz.health = wiz.health + (int) (diff / 2.0);
-            assertEquals(diff1, 0);
         }
+        wiz.experience = diff1;
+        wiz.health = wiz.health - (wiz.protection - 10);
+        assertEquals(diff1, 0.5);
     }
 
     @Test
-    public void takeDamageTest5() {
+    public void takeDamageTestCheckCondition() {
         Wizard wiz = new Wizard();
         game.takeDamage(wiz, 5);
         wiz.experience = 9;
@@ -191,7 +199,7 @@ public class BlackBoxGiven {
         Wizard wiz = new Wizard();
         Druid dru = new Druid();
         game.attack(wiz, dru);
-        wiz.health = 16;
+        wiz.health = 20;
         dru.health = 27;
         if (wiz.health > 0 && dru.health > 0) {
             //game.attack(wiz, dru);
@@ -203,9 +211,7 @@ public class BlackBoxGiven {
             }
             assertTrue(game.levelUp(wiz));//fail
             assertTrue(game.levelUp(dru));
-
         }
-
     }
 
 
@@ -224,8 +230,8 @@ public class BlackBoxGiven {
                 game.levelUp(wiz);
                 game.levelUp(dru);
             }
-            assertTrue(wiz.health < 0);
-            //assertEquals(wiz.health, 0);
+            //assertTrue(wiz.health < 0);
+            assertEquals(wiz.health, 0);
         }
     }
 
