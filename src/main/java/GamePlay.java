@@ -1,3 +1,11 @@
+
+/**
+ *
+ * Implements GamePlay Interface and has lists to store the players. 
+ * The methods change the stats of the players as the game is played.
+ * 
+ */
+
 import java.util.*;
 
 public class GamePlay implements GamePlayInterface {
