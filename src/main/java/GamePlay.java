@@ -2,6 +2,9 @@ import java.util.*;
 
 public class GamePlay implements GamePlayInterface {
     
+	
+  	double diff;//for takeDamage
+	int diff1;//for takeDamage
     public Character player;
     public List<Character> Opponents;
     public List<Character> remove;
@@ -50,8 +53,10 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public boolean addOpponent(Character opponent) {
-        if (this.Opponents.add(opponent)) return true;
-        else return false;
+        if (this.Opponents.add(opponent)) 
+        	return true;
+        else 
+        	return false;
     }
 
     /**
@@ -78,8 +83,13 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int dealDamage(Character character) {
-    System.out.println("Not Implemented here, your job in assign 3");
-    return 1;
+    	if(character.health > 0) {
+    		character.experience += 1;
+    	}
+    	if(character.health < 10) {
+    		character.damage = (character.damage*2) - character.damage;
+    	}
+    return character.damage;
     }
 
     /**
@@ -102,8 +112,24 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int takeDamage(Character character, int blowDamage) {
-        System.out.println("Not Implemented here your job in assign 3");
-        return 1;
+    	int damagetaken = character.health;
+    	if(character.protection > blowDamage && character.health < 0) {
+    		diff = character.protection - blowDamage;
+    		if((diff/2)%1 == 0.5) {
+    			diff1 = (int) Math.floor(diff);
+    		}
+    		character.health = character.health + (diff1/2);
+    		character.experience = character.experience + diff1;
+    	}
+    	else if (character.protection <= blowDamage) {
+    		diff = character.protection - blowDamage;
+    		if((diff/2)%1 == 0.5) {
+    			diff1 = (int) Math.floor(diff);
+    		}
+    		character.health = character.health - diff1;
+    		character.experience = character.experience - (diff1/2);
+    	}
+        return character.health - damagetaken;
     }
 
     /**
@@ -175,15 +201,30 @@ public class GamePlay implements GamePlayInterface {
      * Then the characters level up (call levelUp on both) -- if health > 0
      * 
      * Then the other character attacks, same procedure as above
-     * 
-     * 
+     *
+     *
      *
      * @param character that is attacking
      * @param opponent that is being attacked
      */
     @Override
     public void attack(Character character, Character opponent) {
-        System.out.println("Not Implemented here your job in assign 3");
+    	if(character.health > 0 && opponent.health > 0) {
+    		int dealD = dealDamage(character);
+    		int takeD = takeDamage(opponent, opponent.damage);
+    		if(character.health >0 && opponent.health >0) {
+    			levelUp(character);
+    			levelUp(opponent);
+    			if(character.health > 0 && opponent.health >0) {
+    				dealD = dealDamage(opponent);
+    				takeD = takeDamage(character,character.damage);
+    				if(character.health > 0 && opponent.health >0) {
+    					levelUp(character);
+    					levelUp(opponent);
+    				}
+    			}
+    		}
+    	}
     }
 
     /**
@@ -212,17 +253,15 @@ public class GamePlay implements GamePlayInterface {
                 orderOfAttack[0] = player;
                 orderOfAttack[1] = opponent;
                 player.experience += Math.ceil(player.speed - opponent.speed);
-                } else {
+                }
+            else {
                 orderOfAttack[1] = opponent;
                 orderOfAttack[0] = player;
                 opponent.experience += Math.ceil(opponent.speed - player.speed);
              }
-
             // attack in order
-            attack(orderOfAttack[0], orderOfAttack[1]);
-            
+            attack(orderOfAttack[0], orderOfAttack[1]);            
         }
-
         // remove opponents that have <= 0 health
         for (int o=0; o < Opponents.size(); o++) {
             if (Opponents.get(o).health <= 0) {
