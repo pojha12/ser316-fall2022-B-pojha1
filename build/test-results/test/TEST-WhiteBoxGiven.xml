@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T08:14:12" hostname="MacBook-Pro.attlocal.net" time="0.023">
+<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T21:15:42" hostname="MacBook-Pro.attlocal.net" time="0.031">
   <properties/>
-  <testcase name="equalDP" classname="WhiteBoxGiven" time="0.023"/>
+  <testcase name="equalDP" classname="WhiteBoxGiven" time="0.031"/>
   <system-out><![CDATA[Not Implemented here your job in assign 3
 ]]></system-out>
   <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting WhiteBoxGiven.
@@ -187,7 +187,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Game
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:24)
+	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:23)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
@@ -262,7 +262,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Game
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:24)
+	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:23)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
@@ -328,7 +328,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Barb
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:24)
+	at WhiteBoxGiven.equalDP(WhiteBoxGiven.java:23)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)

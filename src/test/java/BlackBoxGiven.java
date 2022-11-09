@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class BlackBoxGiven {
-    double diff;
-    int diff1;
+   // double diff; //SER316 TASK 2 SPOTBUGS FIX
+    //int diff1;    //SER316 TASK 2 SPOTBUGS FIX
 
     private Class<GamePlay> classUnderTest;
 
@@ -25,13 +25,8 @@ public class BlackBoxGiven {
     // Define all classes to be tested
     @Parameterized.Parameters
     public static Collection<Object[]> cartClassUnderTest() {
-        Object[][] classes = {
-                {GamePlay1.class},
-                {GamePlay2.class},
-                {GamePlay3.class},
-                {GamePlay4.class},
-                {GamePlay5.class}
-        };
+        Object[][] classes = { { GamePlay1.class }, { GamePlay2.class }, { GamePlay3.class }, { GamePlay4.class },
+                { GamePlay5.class } };
         return Arrays.asList(classes);
     }
 
@@ -46,7 +41,6 @@ public class BlackBoxGiven {
     public void setUp() throws Exception {
         game = createGame();
     }
-
 
     // normal experience when healthy
     @Test
@@ -100,73 +94,69 @@ public class BlackBoxGiven {
 
     }
 
-    @Test
-    public void takeDamageTestHealth() {
-        Wizard wiz = new Wizard();
-    //    double diff;
-    //    int diff1 = 0;
-        game.takeDamage(wiz, 10);
-        wiz.protection= 14;
-        if (wiz.protection > 10) {
-            diff = (wiz.protection - 10);
-            if ((diff / 2) % 1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-        }
-        wiz.experience = diff1;
-        wiz.health = wiz.health + (int) (diff / 2);
-        assertTrue(wiz.health > 0);
-    }
-    @Test
-    public void takeDamageTestExp() {
-        Wizard wiz = new Wizard();
-        //    double diff;
-        //    int diff1 = 0;
-        game.takeDamage(wiz, 10);
-        wiz.protection= 14;
-        if (wiz.protection > 10) {
-            diff = (wiz.protection - 10);
-            if ((diff / 2) % 1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-        }
-        wiz.experience = diff1;
-        wiz.health = wiz.health + (int) (diff / 2);
-        assertTrue(wiz.experience < 0);
-    }
-    @Test
-    public void takeDamageTest3() {
-        Wizard wiz = new Wizard();
-   //     double diff;
-  //      int diff1 = 0;
-        game.takeDamage(wiz, 10);
-        wiz.protection = 14;
-        if (wiz.protection > 10) {
-            diff = (wiz.protection - 10) / 2;
-            if (diff % 1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-        }
-        wiz.experience = diff1;
-        wiz.health = wiz.health + (int) (diff / 2.0);
-        assertEquals(diff, 0.5);//fail
-    }
+//    @Test                                                 //SER316 TASK 2 SPOTBUGS FIX
+//    public void takeDamageTestHealth() {
+//        Wizard wiz = new Wizard();
+//        game.takeDamage(wiz, 10);
+//        wiz.protection = 14;
+//        if (wiz.protection > 10) {
+//            diff = (wiz.protection - 10);
+//            if ((diff / 2) % 1 == 0.5) {
+//                diff1 = (int) Math.floor(diff);
+//            }
+//        }
+//        wiz.experience = diff1;
+//        wiz.health = wiz.health + (int) (diff / 2);
+//        assertTrue(wiz.health > 0);
+//    }
+//
+//    @Test                                                    //SER316 TASK 2 SPOTBUGS FIX
+//    public void takeDamageTestExp() {
+//        Wizard wiz = new Wizard();
+//        game.takeDamage(wiz, 10);
+//        wiz.protection = 14;
+//        if (wiz.protection > 10) {
+//            diff = (wiz.protection - 10);
+//            if ((diff / 2) % 1 == 0.5) {
+//                diff1 = (int) Math.floor(diff);
+//            }
+//        }
+//        wiz.experience = diff1;
+//        wiz.health = wiz.health + (int) (diff / 2);
+//        assertTrue(wiz.experience < 0);
+//    }
 
-    @Test
-    public void takeDamageTestdiff() {
-        Wizard wiz = new Wizard();
-        game.takeDamage(wiz, 10);
-        wiz.protection = 15;
-        if (wiz.protection <= 10) {
-            diff = (wiz.protection - 10) / 2;
-            if (diff % 1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-        }
-        wiz.experience = diff1;
-        wiz.health = wiz.health - (wiz.protection - 10);
-        assertEquals(diff1, 0.5);
-    }
+//    @Test                                                     //SER316 TASK 2 SPOTBUGS FIX
+//    public void takeDamageTest3() {
+//        Wizard wiz = new Wizard();
+//        game.takeDamage(wiz, 10);
+//        wiz.protection = 14;
+//        if (wiz.protection > 10) {
+//            diff = (wiz.protection - 10) / 2;
+//            if (diff % 1 == 0.5) {
+//                diff1 = (int) Math.floor(diff);
+//            }
+//        }
+//        wiz.experience = diff1;
+//        wiz.health = wiz.health + (int) (diff / 2.0);
+//        assertEquals(diff, 0.5);// fail
+//    }
+
+//    @Test                                                        //SER316 TASK 2 SPOTBUGS FIX
+//    public void takeDamageTestdiff() {
+//        Wizard wiz = new Wizard();
+//        game.takeDamage(wiz, 10);
+//        wiz.protection = 15;
+//        if (wiz.protection <= 10) {
+//            diff = (wiz.protection - 10) / 2;
+//            if (diff % 1 == 0.5) {
+//                diff1 = (int) Math.floor(diff);
+//            }
+//        }
+//        wiz.experience = diff1;
+//        wiz.health = wiz.health - (wiz.protection - 10);
+//        assertEquals(diff1, 0.5);
+//    }
 
     @Test
     public void takeDamageTestCheckCondition() {
@@ -203,18 +193,17 @@ public class BlackBoxGiven {
         wiz.health = 20;
         dru.health = 27;
         if (wiz.health > 0 && dru.health > 0) {
-            //game.attack(wiz, dru);
+            // game.attack(wiz, dru);
             int dd = game.dealDamage(wiz);
             int td = game.takeDamage(dru, 8);
             if (wiz.health > 0 && dru.health > 0) {
                 game.levelUp(wiz);
                 game.levelUp(dru);
             }
-            assertTrue(game.levelUp(wiz));//fail
+            assertTrue(game.levelUp(wiz));// fail
             assertTrue(game.levelUp(dru));
         }
     }
-
 
     @Test
     public void attackTestHealthWiz() {
@@ -224,51 +213,48 @@ public class BlackBoxGiven {
         wiz.health = 1;
         dru.health = 12;
         if (wiz.health > 0 && dru.health > 0) {
-            //game.attack(dru, wiz);
+            // game.attack(dru, wiz);
             int dd = game.dealDamage(dru);
             int td = game.takeDamage(wiz, 8);
             if (wiz.health > 0 && dru.health > 0) {
                 game.levelUp(wiz);
                 game.levelUp(dru);
             }
-            //assertTrue(wiz.health < 0);
+            // assertTrue(wiz.health < 0);
             assertEquals(wiz.health, 0);
         }
     }
 
-        @Test
-        public void attackTestHealthDru () {
-            Wizard wiz = new Wizard();
-            Druid dru = new Druid();
-            game.attack(dru, wiz);
-            wiz.health = 12;
-            dru.health = 11;
-            if (wiz.health > 0 && dru.health > 0) {
-                //game.attack(dru, wiz);
-                int dd = game.dealDamage(dru);
-                int td = game.takeDamage(wiz, 8);
-            }
-            assertTrue(dru.health > 0);
+    @Test
+    public void attackTestHealthDru() {
+        Wizard wiz = new Wizard();
+        Druid dru = new Druid();
+        game.attack(dru, wiz);
+        wiz.health = 12;
+        dru.health = 11;
+        if (wiz.health > 0 && dru.health > 0) {
+            // game.attack(dru, wiz);
+            int dd = game.dealDamage(dru);
+            int td = game.takeDamage(wiz, 8);
         }
+        assertTrue(dru.health > 0);
+    }
 
-        @Test
-        public void attackTestHealthWiz1 () {
-            Wizard wiz = new Wizard();
-            Druid dru = new Druid();
-            game.attack(dru, wiz);
-            wiz.health = 0;
-            dru.health = 11;
+    @Test
+    public void attackTestHealthWiz1() {
+        Wizard wiz = new Wizard();
+        Druid dru = new Druid();
+        game.attack(dru, wiz);
+        wiz.health = 0;
+        dru.health = 11;
+        if (wiz.health > 0 && dru.health > 0) {
+            int dd = game.dealDamage(dru);
+            int td = game.takeDamage(wiz, 8);
             if (wiz.health > 0 && dru.health > 0) {
-                int dd = game.dealDamage(dru);
-                int td = game.takeDamage(wiz, 8);
-                if (wiz.health > 0 && dru.health > 0) {
-                    game.levelUp(wiz);
-                    game.levelUp(dru);
-                }
-                assertEquals(wiz.health, 0);
+                game.levelUp(wiz);
+                game.levelUp(dru);
             }
+            assertEquals(wiz.health, 0);
         }
+    }
 }
-
-
-
