@@ -19,8 +19,9 @@ dependencies {
     implementation "junit:junit:4.12"
     implementation files('cls/')
 }
+
 test {
- exclude '**/BlackBoxGiven.class'
+  exclude '**/BlackBoxGiven.class'
 }
 
 ///////////////////////////////////////////////////////////////////////
