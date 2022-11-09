@@ -1,0 +1,9 @@
+*.class
+
+### Gradle ###
+.gradle
+/build/
+
+# Package Files #
+*.jar
+*.zip
