@@ -100,14 +100,14 @@ public class GamePlay implements GamePlayInterface {
      * Function to add experience points for attacked character as well as update
      * their health based on the attack and their protection. If their protection is
      * higher than the blowDamage then the character will heal by half of that
-     * difference they will also gain the full difference as experience.  <p>
+     * difference they will also gain the full difference as experience. 
      *
      * <p>If their protection is lower or equal than the blowDamage then the character
      * will take half the difference as experience and the health will be reduced by
      * the full difference. 
      * 
      * 
-     * If the difference by half is 0.5 we floor it.
+     *  <p>If the difference by half is 0.5 we floor it.
      * 
      * <p>Health cannot go below 0.
      * 
@@ -140,27 +140,33 @@ public class GamePlay implements GamePlayInterface {
             character.pointsPerLevel *= 2; // need more points to level up next time
             character.health = 100; // level up resets health
 
-            if (character.getClass().getName().equals(new Barbarian().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            if (character.getClass().getName()
+                    .equals(new Barbarian().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += 10;
                 character.speed = character.speed + 0.25;
                 character.protection += 2;
-            } else if (character.getClass().getName().equals(new Bard().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            } else if (character.getClass().getName()
+                    .equals(new Bard().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += character.damage / 2;
                 character.speed += 0.5;
                 character.protection += character.protection / 2;
-            } else if (character.getClass().getName().equals(new Druid().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            } else if (character.getClass().getName()
+                    .equals(new Druid().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += 10;
                 character.speed += 0.25;
                 character.protection += 2; //SER316 TASK 2 SPOTBUGS FIX
-            } else if (character.getClass().getName().equals(new Ranger().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            } else if (character.getClass().getName()
+                    .equals(new Ranger().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += character.damage % 10;
                 character.speed += 0.5;
                 character.protection += character.protection % 5;
-            } else if (character.getClass().getName().equals (new Rogue().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            } else if (character.getClass().getName()
+                    .equals(new Rogue().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += character.damage / 3;
                 character.speed += 1.25;
                 character.protection += 3;
-            } else if (character.getClass().getName().equals(new Wizard().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
+            } else if (character.getClass().getName()
+                    .equals(new Wizard().getClass().getName())) { //SER316 TASK 2 SPOTBUGS FIX
                 character.damage += 5;
                 character.speed += 1;
                 character.protection += 1;
@@ -171,8 +177,8 @@ public class GamePlay implements GamePlayInterface {
             }
             levelUp(character);
         }
-       // boolean test;             //SER316 TASK 2 SPOTBUGS FIX
-       // return test = false;      //SER316 TASK 2 SPOTBUGS FIX
+     // boolean test;             //SER316 TASK 2 SPOTBUGS FIX
+      //return test = false;      //SER316 TASK 2 SPOTBUGS FIX
         return false;
     }
 
