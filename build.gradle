@@ -44,7 +44,7 @@ jacocoTestReport {
 ///////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
 /////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
  apply plugin: 'checkstyle'
  checkstyle {
 //   // Keep checkstyle a little quieter
@@ -61,7 +61,7 @@ jacocoTestReport {
  checkstyle {
      toolVersion = "8.8"
  }
-=======
+
 apply plugin: 'checkstyle'
 checkstyle {
 	// Keep checkstyle a little quieter
@@ -81,7 +81,7 @@ checkstyle {
 tasks.withType(Checkstyle).each {
     it.group = 'verification'
 }
->>>>>>> StaticAnalysis
+
 
 
 ///////////////////////////////////////////////////////////////////////
