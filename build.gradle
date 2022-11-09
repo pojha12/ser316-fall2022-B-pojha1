@@ -1,6 +1,7 @@
 plugins {
      id "com.github.spotbugs" version "5.0.12"
 //     id "checkstyle"
+	id "jacoco"
 }
 
 apply plugin: 'application'
@@ -21,13 +22,29 @@ dependencies {
 }
 
 test {
-  exclude '**/BlackBoxGiven.class'
-  
+	exclude '**/BlackBoxGiven.class'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(18)
+	}
+}	
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**Main.class', '**TDD.class', '**WhiteBoxGiven.class'])
+        }))
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
 /////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
  apply plugin: 'checkstyle'
  checkstyle {
 //   // Keep checkstyle a little quieter
@@ -44,6 +61,27 @@ test {
  checkstyle {
      toolVersion = "8.8"
  }
+=======
+apply plugin: 'checkstyle'
+checkstyle {
+	// Keep checkstyle a little quieter
+	ignoreFailures = true
+	showViolations = false
+}
+
+tasks.withType(Checkstyle) {
+	reports {
+		html.enabled = true
+		xml.enabled = false
+  }
+}
+checkstyle {
+	toolVersion = "8.8"
+}
+tasks.withType(Checkstyle).each {
+    it.group = 'verification'
+}
+>>>>>>> StaticAnalysis
 
 
 ///////////////////////////////////////////////////////////////////////

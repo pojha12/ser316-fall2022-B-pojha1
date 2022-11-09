@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 public class WhiteBoxGiven {
 
-
     @Before
     public void setUp() throws Exception {
     }

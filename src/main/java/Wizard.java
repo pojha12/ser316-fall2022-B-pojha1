@@ -1,5 +1,11 @@
-public class Wizard extends Character {
 
+public class Wizard extends Character {
+    
+    /**
+     * Constructor to assign values to Wizard attributes.
+     * 
+     *
+     */
     public Wizard() {
         protection = 1;
         damage = 5;
