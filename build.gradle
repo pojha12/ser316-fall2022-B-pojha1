@@ -58,7 +58,7 @@ tasks.withType(Checkstyle) {
   }
 }
 checkstyle {
-	toolVersion = "8.3"
+	toolVersion = "8.8"
 }
 tasks.withType(Checkstyle).each {
     it.group = 'verification'
