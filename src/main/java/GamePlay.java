@@ -100,17 +100,17 @@ public class GamePlay implements GamePlayInterface {
      * higher than the blowDamage then the character will heal by half of that
      * difference they will also gain the full difference as experience.
      *
-     * <p>
-     * If their protection is lower or equal than the blowDamage then the character
+     *
+     *<p>If their protection is lower or equal than the blowDamage then the character
      * will take half the difference as experience and the health will be reduced by
      * the full difference.
      * 
      * 
-     * <p>
-     * If the difference by half is 0.5 we floor it.
      * 
-     * <p>
-     * Health cannot go below 0.
+     * <p>If the difference by half is 0.5 we floor it.
+     * 
+     * 
+     *<p> Health cannot go below 0.
      * 
      * @param character  that is being attacked
      * @param blowDamage full force of attack without protection factored in
@@ -141,33 +141,33 @@ public class GamePlay implements GamePlayInterface {
             character.pointsPerLevel *= 2; // need more points to level up next time
             character.health = 100; // level up resets health
 
-            if (character.getClass().getName().equals(new Barbarian().getClass().getName())) { // SER316 TASK 2 SPOTBUGS
-                                                                                               // FIX
+            if (character.getClass().getName().equals(new Barbarian().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                              
                 character.damage += 10;
                 character.speed = character.speed + 0.25;
                 character.protection += 2;
-            } else if (character.getClass().getName().equals(new Bard().getClass().getName())) { // SER316 TASK 2
-                                                                                                 // SPOTBUGS FIX
+            } else if (character.getClass().getName().equals(new Bard().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                                 
                 character.damage += character.damage / 2;
                 character.speed += 0.5;
                 character.protection += character.protection / 2;
-            } else if (character.getClass().getName().equals(new Druid().getClass().getName())) { // SER316 TASK 2
-                                                                                                  // SPOTBUGS FIX
+            } else if (character.getClass().getName().equals(new Druid().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                                  
                 character.damage += 10;
                 character.speed += 0.25;
                 character.protection += 2; // SER316 TASK 2 SPOTBUGS FIX
-            } else if (character.getClass().getName().equals(new Ranger().getClass().getName())) { // SER316 TASK 2
-                                                                                                   // SPOTBUGS FIX
+            } else if (character.getClass().getName().equals(new Ranger().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                                   
                 character.damage += character.damage % 10;
                 character.speed += 0.5;
                 character.protection += character.protection % 5;
-            } else if (character.getClass().getName().equals(new Rogue().getClass().getName())) { // SER316 TASK 2
-                                                                                                  // SPOTBUGS FIX
+            } else if (character.getClass().getName().equals(new Rogue().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                                  
                 character.damage += character.damage / 3;
                 character.speed += 1.25;
                 character.protection += 3;
-            } else if (character.getClass().getName().equals(new Wizard().getClass().getName())) { // SER316 TASK 2
-                                                                                                   // SPOTBUGS FIX
+            } else if (character.getClass().getName().equals(new Wizard().getClass().getName())) { // SER316 TASK 2 SPOTBUGS FIX
+                                                                                                   
                 character.damage += 5;
                 character.speed += 1;
                 character.protection += 1;
@@ -186,25 +186,25 @@ public class GamePlay implements GamePlayInterface {
     /**
      * Function that facilitates the attacker dealing damage to their opponent and
      * then the opposite.
-     * <p>
-     * A character can only attack if both still have health greater than 0, this
+     * 
+     * <p>A character can only attack if both still have health greater than 0, this
      * needs to be true for both attacks happening here
-     * <p>
-     * You do NOT have the implemented methods for this but just 5 implemented
+     *
+     * <p>You do NOT have the implemented methods for this but just 5 implemented
      * versions in the .class files in the cls directory. So you need to Blackbox
      * test this method based on the description you get here. As you see the method
      * returns void, so no return type. You need to come up with a way to still test
      * if this method does what it is supposed to do. It is up to you to figure that
      * out.
-     * <p>
-     * This method uses dealDamage and takeDamage from above, which you should
+     * 
+     * <p>This method uses dealDamage and takeDamage from above, which you should
      * BlackBox test first.
-     * <p>
-     * An attack only happens if health>0 for both characters The first character
+     * 
+     * <p>An attack only happens if health>0 for both characters The first character
      * attacks first, by using dealsDamage and the opponent takesDamage. Then the
      * characters level up (call levelUp on both) -- if health > 0
      * 
-     * Then the other character attacks, same procedure as above
+     * <p>Then the other character attacks, same procedure as above
      *
      *
      *
