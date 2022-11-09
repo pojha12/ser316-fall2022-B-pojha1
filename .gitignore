@@ -1,9 +1,31 @@
 *.class
 
 ### Gradle ###
-.gradle
-/build/
+.gradle/build/
 
 # Package Files #
+*.war
+*.ear
+.idea/
 *.jar
+*.nar
 *.zip
+*.tar.gz
+*.rar
+
+
+.gradlew.properties
+
+*.Ds_Store
+
+bin/*
+tmp/**
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
