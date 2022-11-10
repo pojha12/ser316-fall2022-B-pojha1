@@ -1,0 +1,347 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		ForStudents (spotbugsMain)</p>
+      <p>SpotBugs version: 4.7.2</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Barbarian.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Druid.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/GamePlay.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Ranger.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Character.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Wizard.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/TDD.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Bard.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/BlackBoxGiven.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Main.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/GamePlayInterface.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/WhiteBoxGiven.class</li>
+         <li>/Users/palak/ForStudents/build/classes/java/main/Rogue.class</li>
+         <li>class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>290 lines of code analyzed,
+	in 13 classes, 
+	in 1 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">11</td>
+            <td align="right">37.93</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>11</b>
+            </td>
+            <td align="right">
+               <b>37.93</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">11</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>11</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e49');">
+            <td>
+               <span class="priority-2">Dm</span>
+            </td>
+            <td>GamePlay.levelUp(Character) allocates an object, only to get the class object</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e49" style="display: none;">
+                  <a href="#DM_NEW_FOR_GETCLASS">Bug type DM_NEW_FOR_GETCLASS (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>At GamePlay.java:[line 144]<br/>Another occurrence at GamePlay.java:[line 149]<br/>Another occurrence at GamePlay.java:[line 154]<br/>Another occurrence at GamePlay.java:[line 159]<br/>Another occurrence at GamePlay.java:[line 164]<br/>Another occurrence at GamePlay.java:[line 169]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e23');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: BlackBoxGiven.classUnderTest</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e23" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class BlackBoxGiven<br/>Field BlackBoxGiven.classUnderTest<br/>In BlackBoxGiven.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e36');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: BlackBoxGiven.game</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e36" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class BlackBoxGiven<br/>Field BlackBoxGiven.game<br/>In BlackBoxGiven.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e71');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.diff</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e71" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.diff<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e84');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.diff1</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e84" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.diff1<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e97');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.game1</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e97" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.game1<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e110');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.test1</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e110" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.test1<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e123');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.test2</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e123" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.test2<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e136');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.test3</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e136" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.test3<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e149');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.test4</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e149" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.test4<br/>In TDD.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e163');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: TDD.test5</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e163" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class TDD<br/>Field TDD.test5<br/>In TDD.java</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DM_NEW_FOR_GETCLASS">DM_NEW_FOR_GETCLASS: Method allocates an object, only to get the class object</a>
+      </h2>
+
+  <p>This method allocates an object just to call getClass() on it, in order to
+  retrieve the Class object for it. It is simpler to just access the .class property of the class.</p>
+
+    <h2>
+         <a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
+      </h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>
