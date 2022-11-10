@@ -1,18 +1,17 @@
 *.class
 
 ### Gradle ###
-.gradle
-/build/
+.gradle/build/
 
 # Package Files #
-*.jar
 *.war
-*.nar
 *.ear
+.idea/
+*.jar
+*.nar
 *.zip
 *.tar.gz
 *.rar
-
 
 
 .gradlew.properties
