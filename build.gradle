@@ -1,10 +1,12 @@
 plugins {
-     id "com.github.spotbugs" version "5.0.12"
+//     id "com.github.spotbugs" version "5.0.12"
 //     id "checkstyle"
-	id "jacoco"
+//	id "jacoco"
+    id 'pmd'
 }
 
 apply plugin: 'application'
+apply plugin: 'jacoco'
 
 
 mainClassName = 'Main'
@@ -31,56 +33,65 @@ java {
 	}
 }	
 
-jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
-    
-    afterEvaluate {
-        classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ['**Main.class', '**TDD.class', '**WhiteBoxGiven.class'])
-        }))
-    }
+apply plugin: "pmd"
+pmd {
+  ignoreFailures = true 
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/pmd")
+  ruleSets = []
+  ruleSetConfig = resources.text.fromFile('ruleset.xml')
 }
+
+// jacocoTestReport {
+//     dependsOn test // tests are required to run before generating the report
+    
+//     afterEvaluate {
+//         classDirectories.setFrom(files(classDirectories.files.collect {
+//             fileTree(dir: it, exclude: ['**Main.class', '**TDD.class', '**WhiteBoxGiven.class'])
+//         }))
+//     }
+// }
 
 ///////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
 /////////////////////////////////////////////////////////////////////
 
- apply plugin: 'checkstyle'
- checkstyle {
-//   // Keep checkstyle a little quieter
-   ignoreFailures = true
-   showViolations = false
- }
+//  apply plugin: 'checkstyle'
+//  checkstyle {
+// //   // Keep checkstyle a little quieter
+//    ignoreFailures = true
+//    showViolations = false
+//  }
 
- tasks.withType(Checkstyle) {
-   reports {
-     html.enabled = true
-     xml.enabled = false
-   }
- }
- checkstyle {
-     toolVersion = "8.8"
- }
+//  tasks.withType(Checkstyle) {
+//    reports {
+//      html.enabled = true
+//      xml.enabled = false
+//    }
+//  }
+//  checkstyle {
+//      toolVersion = "8.8"
+//  }
 
-apply plugin: 'checkstyle'
-checkstyle {
+// apply plugin: 'checkstyle'
+// checkstyle {
 	// Keep checkstyle a little quieter
-	ignoreFailures = true
-	showViolations = false
-}
+// 	ignoreFailures = true
+// 	showViolations = false
+// }
 
-tasks.withType(Checkstyle) {
-	reports {
-		html.enabled = true
-		xml.enabled = false
-  }
-}
-checkstyle {
-	toolVersion = "8.8"
-}
-tasks.withType(Checkstyle).each {
-    it.group = 'verification'
-}
+// tasks.withType(Checkstyle) {
+// 	reports {
+// 		html.enabled = true
+// 		xml.enabled = false
+//   }
+// }
+// checkstyle {
+// 	toolVersion = "8.8"
+// }
+// tasks.withType(Checkstyle).each {
+//     it.group = 'verification'
+// }
 
 
 
@@ -88,14 +99,14 @@ tasks.withType(Checkstyle).each {
 // Configure SpotBugs
 ///////////////////////////////////////////////////////////////////////
 // To generate an HTML report instead of XML
- spotbugsMain {
-     reports {
-         xml.enabled = false
-         html.enabled = true
-     }
- }
- spotbugs {
-     ignoreFailures = true
-     showProgress = true
-     effort = 'max'
- }
+//  spotbugsMain {
+//      reports {
+//          xml.enabled = false
+//          html.enabled = true
+//      }
+//  }
+//  spotbugs {
+//      ignoreFailures = true
+//      showProgress = true
+//      effort = 'max'
+//  }
