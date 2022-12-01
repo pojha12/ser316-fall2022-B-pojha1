@@ -9,7 +9,9 @@
 import java.util.*;
 
 public class GamePlay implements GamePlayInterface {
-
+    
+    double diff;//for takeDamage
+    int diff1;//for takeDamage
     public Character player;
     public List<Character> opponents;
     // public List<Character> remove; //SER316 TASK 2 SPOTBUGS FIX
@@ -90,8 +92,13 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int dealDamage(Character character) {
-        System.out.println("Not Implemented here, your job in assign 3");
-        return 1;
+        if(character.health > 0) {
+            character.experience += 1;
+        }
+        if(character.health < 10) {
+            character.damage = (character.damage*2) - character.damage;
+        }
+    return character.damage;
     }
 
     /**
@@ -118,8 +125,24 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int takeDamage(Character character, int blowDamage) {
-        System.out.println("Not Implemented here your job in assign 3");
-        return 1;
+        int damagetaken = character.health;
+        if(character.protection > blowDamage && character.health < 0) {
+            diff = character.protection - blowDamage;
+            if((diff/2)%1 == 0.5) {
+                diff1 = (int) Math.floor(diff);
+            }
+            character.health = character.health + (diff1/2);
+            character.experience = character.experience + diff1;
+        }
+        else if (character.protection <= blowDamage) {
+            diff = character.protection - blowDamage;
+            if((diff/2)%1 == 0.5) {
+                diff1 = (int) Math.floor(diff);
+            }
+            character.health = character.health - diff1;
+            character.experience = character.experience - (diff1/2);
+        }
+        return character.health - damagetaken;
     }
 
     /**
@@ -213,7 +236,22 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public void attack(Character character, Character opponent) {
-        System.out.println("Not Implemented here your job in assign 3");
+        if(character.health > 0 && opponent.health > 0) {
+            int dealD = dealDamage(character);
+            int takeD = takeDamage(opponent, opponent.damage);
+            if(character.health >0 && opponent.health >0) {
+                levelUp(character);
+                levelUp(opponent);
+                if(character.health > 0 && opponent.health >0) {
+                    dealD = dealDamage(opponent);
+                    takeD = takeDamage(character,character.damage);
+                    if(character.health > 0 && opponent.health >0) {
+                        levelUp(character);
+                        levelUp(opponent);
+                    }
+                }
+            }
+        }
     }
 
     /**
