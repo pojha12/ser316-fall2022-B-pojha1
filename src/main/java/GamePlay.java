@@ -125,24 +125,29 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int takeDamage(Character character, int blowDamage) {
+        int result;
         int damagetaken = character.health;
         if(character.protection > blowDamage && character.health < 0) {
             diff = character.protection - blowDamage;
-            if((diff/2)%1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-            character.health = character.health + (diff1/2);
-            character.experience = character.experience + diff1;
+            result = calcDiffFloor(diff);
+            character.health += character.health + (result/2);
+            character.experience += result;
         }
         else if (character.protection <= blowDamage) {
             diff = character.protection - blowDamage;
-            if((diff/2)%1 == 0.5) {
-                diff1 = (int) Math.floor(diff);
-            }
-            character.health = character.health - diff1;
-            character.experience = character.experience - (diff1/2);
+            result = calcDiffFloor(diff);
+            character.health -= result;
+            character.experience = character.experience - (result/2);
         }
         return character.health - damagetaken;
+    }
+    
+    
+    public int calcDiffFloor(double d) {
+        if((diff/2)%1 == 0.5) {
+            diff1 = (int) Math.floor(diff);
+        }
+        return diff1;
     }
 
     /**
@@ -236,23 +241,35 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public void attack(Character character, Character opponent) {
-        if(character.health > 0 && opponent.health > 0) {
+        if(checkHealth(character, opponent)) {
             int dealD = dealDamage(character);
             int takeD = takeDamage(opponent, opponent.damage);
-            if(character.health >0 && opponent.health >0) {
+            if(checkHealth(character, opponent)) {
                 levelUp(character);
                 levelUp(opponent);
-                if(character.health > 0 && opponent.health >0) {
-                    dealD = dealDamage(opponent);
+                if(checkHealth(character, opponent)) {
+                   dealD = dealDamage(opponent);
                     takeD = takeDamage(character,character.damage);
-                    if(character.health > 0 && opponent.health >0) {
+                    if(checkHealth(character, opponent)) {
                         levelUp(character);
                         levelUp(opponent);
                     }
+                    
                 }
-            }
+            }  
         }
     }
+
+    
+   public boolean checkHealth(Character character, Character opponent) {
+        if(character.health > 0 && opponent.health > 0) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
+    
 
     /**
      * This method returns the amount of experience points earned by the player
@@ -291,7 +308,6 @@ public class GamePlay implements GamePlayInterface {
 
             // attack in order
             attack(orderOfAttack[0], orderOfAttack[1]);
-
         }
 
         // remove opponents that have <= 0 health
