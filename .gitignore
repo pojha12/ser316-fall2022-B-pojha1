@@ -1,26 +1,26 @@
-*.class
+.gradlew
+.properties
 
-### Gradle ###
-.gradle
-/build/
+*.Ds_Store
+.gradle/
+build/
+
 
 # Package Files #
-*.jar
 *.war
-*.nar
 *.ear
+.idea/
+*.jar
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-
-*.Ds_Store
-
-.gradlew.properties
-
-*.Ds_Store
-
-bin/*
+### eclipse specific git ignore
+*.pydevproject
+.project
+.metadata
+bin/**
 tmp/**
 *.tmp
 *.bak
@@ -31,3 +31,30 @@ local.properties
 .settings/
 .loadpath
 
+# Log file
+*.log
+
+## Recommended from GitHub for gradle projects
+
+/bin/
+.gradle
+**/build/
+!src/**/build/
+
+### Ignore Gradle GUI config
+gradle-app.setting
+
+### Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+### Avoid ignore Gradle wrappper properties
+!gradle-wrapper.properties
+
+### Cache of project
+.gradletasknamecache
+
+### Eclipse Gradle plugin generated files
+#### Eclipse Core
+.project
+#### JDT-specific (Eclipse Java Development Tools)
+.classpath
