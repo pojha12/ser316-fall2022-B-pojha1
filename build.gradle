@@ -42,6 +42,7 @@ pmd {
   ruleSetConfig = resources.text.fromFile('ruleset.xml')
 }
 
+
 // jacocoTestReport {
 //     dependsOn test // tests are required to run before generating the report
     
