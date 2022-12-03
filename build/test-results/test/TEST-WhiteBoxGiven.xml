@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<testsuite name="WhiteBoxGiven" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-11-09T21:52:55" hostname="MacBook-Pro.attlocal.net" time="0.029">
+<testsuite name="WhiteBoxGiven" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-02T00:43:53" hostname="MacBook-Pro.attlocal.net" time="0.007">
   <properties/>
-  <testcase name="testPlay" classname="WhiteBoxGiven" time="0.018"/>
-  <testcase name="checkLevelUp" classname="WhiteBoxGiven" time="0.001"/>
+  <testcase name="testPlay" classname="WhiteBoxGiven" time="0.003"/>
+  <testcase name="checkLevelUp" classname="WhiteBoxGiven" time="0.0"/>
   <testcase name="takeDamageTestHealth" classname="WhiteBoxGiven" time="0.001"/>
   <testcase name="checkLevelUp1" classname="WhiteBoxGiven" time="0.0"/>
   <testcase name="checkLevelUp2" classname="WhiteBoxGiven" time="0.0"/>
-  <testcase name="checkLevelUp3" classname="WhiteBoxGiven" time="0.001"/>
+  <testcase name="checkLevelUp3" classname="WhiteBoxGiven" time="0.0"/>
   <testcase name="checkLevelUp4" classname="WhiteBoxGiven" time="0.0"/>
-  <testcase name="dealDamageWB" classname="WhiteBoxGiven" time="0.001"/>
-  <system-out><![CDATA[Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here, your job in assign 3
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-=======
-<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T21:15:42" hostname="MacBook-Pro.attlocal.net" time="0.031">
-=======
-<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T22:58:14" hostname="MacBook-Pro.attlocal.net" time="0.002">
->>>>>>> StaticAnalysis
-  <properties/>
-  <testcase name="equalDP" classname="WhiteBoxGiven" time="0.002"/>
-  <system-out><![CDATA[Not Implemented here your job in assign 3
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting WhiteBoxGiven.
 	at org.jacoco.agent.rt.internal_3570298.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
@@ -82,5 +61,4 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_3570298.core.instr.Instrumenter.instrument(Instrumenter.java:108)
 	... 37 more
 ]]></system-err>
->>>>>>> StaticAnalysis
 </testsuite>

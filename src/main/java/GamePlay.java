@@ -209,6 +209,45 @@ public class GamePlay implements GamePlayInterface {
         // boolean test; //SER316 TASK 2 SPOTBUGS FIX
         // return test = false; //SER316 TASK 2 SPOTBUGS FIX
         return false;
+//            switch(character.getClass().getName()) {
+//                case new Barbarian().getClass().getName():
+//                    character.damage += 10;
+//                    character.speed = character.speed + 0.25;
+//                    character.protection += 2;
+//                    break;
+//                case new Bard().getClass().getName():
+//                    character.damage += character.damage / 2;
+//                    character.speed += 0.5;
+//                    character.protection += character.protection / 2;
+//                    break;
+//                case new Druid().getClass().getName():
+//                    character.damage += 10;
+//                    character.speed += 0.25;
+//                    character.protection += 2;
+//                    break;
+//                case new Ranger().getClass().getName():
+//                    character.damage += character.damage % 10;
+//                    character.speed += 0.5;
+//                    character.protection += character.protection % 5;
+//                    break;
+//                case new Rogue().getClass().getName():
+//                    character.damage += character.damage / 3;
+//                    character.speed += 1.25;
+//                    character.protection += 3;
+//                    break;
+//                case new Wizard().getClass().getName():
+//                    character.damage += 5;
+//                    character.speed += 1;
+//                    character.protection += 1;
+//                    break;
+//                default:
+//                    character.damage++;
+//                    character.speed += 0.25;
+//                    character.protection++;
+//    
+//            }
+//            levelUp(character);}
+                    
     }
 
     /**

@@ -1,51 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="TDD" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-11-09T21:52:55" hostname="MacBook-Pro.attlocal.net" time="0.013">
+<testsuite name="TDD" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-12-02T00:43:53" hostname="MacBook-Pro.attlocal.net" time="0.035">
   <properties/>
-  <testcase name="attackTestHealthDru" classname="TDD" time="0.0"/>
-  <testcase name="attackTestHealthWiz" classname="TDD" time="0.0"/>
-  <testcase name="takeDamageTestCheckCondition" classname="TDD" time="0.0"/>
-  <testcase name="attackTestHealthcheckLevelUp" classname="TDD" time="0.001"/>
-  <testcase name="test2dealDamageNormal" classname="TDD" time="0.001"/>
-  <testcase name="takeDamageTestLess" classname="TDD" time="0.001"/>
-  <testcase name="takeDamageTestSame" classname="TDD" time="0.002"/>
-  <testcase name="takeDamageTestdiff" classname="TDD" time="0.001"/>
-  <testcase name="attackTestWizDru" classname="TDD" time="0.0"/>
-  <testcase name="takeDamageTestHealth" classname="TDD" time="0.001"/>
-  <testcase name="attackTestHealthDru2" classname="TDD" time="0.001"/>
-  <testcase name="takeDamageTestHealth2" classname="TDD" time="0.001"/>
-=======
-<testsuite name="TDD" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-11-09T22:58:14" hostname="MacBook-Pro.attlocal.net" time="0.027">
-  <properties/>
-  <testcase name="attackTestHealthDru" classname="TDD" time="0.008"/>
-  <testcase name="attackTestHealthWiz" classname="TDD" time="0.012"/>
+  <testcase name="attackTestHealthDru" classname="TDD" time="0.012"/>
+  <testcase name="attackTestHealthWiz" classname="TDD" time="0.014"/>
   <testcase name="takeDamageTestCheckCondition" classname="TDD" time="0.001"/>
   <testcase name="attackTestHealthcheckLevelUp" classname="TDD" time="0.0"/>
   <testcase name="test2dealDamageNormal" classname="TDD" time="0.0"/>
   <testcase name="takeDamageTestLess" classname="TDD" time="0.0"/>
-  <testcase name="takeDamageTestSame" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageTestSame" classname="TDD" time="0.001"/>
   <testcase name="takeDamageTestdiff" classname="TDD" time="0.0"/>
-  <testcase name="attackTestWizDru" classname="TDD" time="0.001"/>
-  <testcase name="takeDamageTestHealth" classname="TDD" time="0.0"/>
-  <testcase name="attackTestHealthDru2" classname="TDD" time="0.001"/>
-  <testcase name="takeDamageTestHealth2" classname="TDD" time="0.0"/>
->>>>>>> StaticAnalysis
-  <system-out><![CDATA[Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here, your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-Not Implemented here your job in assign 3
-]]></system-out>
-<<<<<<< HEAD
-  <system-err><![CDATA[]]></system-err>
-=======
+  <testcase name="attackTestWizDru" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageTestHealth" classname="TDD" time="0.001"/>
+  <testcase name="attackTestHealthDru2" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageTestHealth2" classname="TDD" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting TDD.
 	at org.jacoco.agent.rt.internal_3570298.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
@@ -486,8 +454,8 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Bard
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at GamePlay.<init>(GamePlay.java:33)
-	at GamePlay.<init>(GamePlay.java:21)
+	at GamePlay.<init>(GamePlay.java:35)
+	at GamePlay.<init>(GamePlay.java:23)
 	at TDD.attackTestHealthWiz(TDD.java:137)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -553,8 +521,8 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Rogu
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at GamePlay.<init>(GamePlay.java:35)
-	at GamePlay.<init>(GamePlay.java:21)
+	at GamePlay.<init>(GamePlay.java:37)
+	at GamePlay.<init>(GamePlay.java:23)
 	at TDD.attackTestHealthWiz(TDD.java:137)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -620,8 +588,8 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting Rang
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	at GamePlay.<init>(GamePlay.java:36)
-	at GamePlay.<init>(GamePlay.java:21)
+	at GamePlay.<init>(GamePlay.java:38)
+	at GamePlay.<init>(GamePlay.java:23)
 	at TDD.attackTestHealthWiz(TDD.java:137)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -674,5 +642,4 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_3570298.core.instr.Instrumenter.instrument(Instrumenter.java:108)
 	... 53 more
 ]]></system-err>
->>>>>>> StaticAnalysis
 </testsuite>
