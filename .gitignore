@@ -2,6 +2,7 @@
 .properties
 
 *.Ds_Store
+
 .gradle/
 build/
 
